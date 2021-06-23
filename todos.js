@@ -291,6 +291,6 @@ app.use((err, req, res, _next) => {
 });
 
 // Listener
-app.listen(process.env.port || 5000, host, () => {
-  console.log(`Todos is listening on port ${process.env.port || 5000} of ${host}!`);
+app.listen(port, host, () => {
+  console.log(`Todos is listening on port ${port} of ${host}!`);
 });
