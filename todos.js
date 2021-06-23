@@ -8,7 +8,6 @@ const SessionPersistence = require("./lib/session-persistence");
 
 const app = express();
 const host = "localhost";
-const port = 3001;
 const LokiStore = store(session);
 
 app.set("views", "./views");
@@ -290,6 +289,6 @@ app.use((err, req, res, _next) => {
 });
 
 // Listener
-app.listen(port, host, () => {
-  console.log(`Todos is listening on port ${port} of ${host}!`);
+app.listen(process.env.PORT || 5000, host, () => {
+  console.log(`Todos is listening on port ${process.env.PORT || 5000} of ${host}!`);
 });
