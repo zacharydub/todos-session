@@ -24,7 +24,7 @@ app.use(session({
     path: "/",
     secure: false,
   },
-  name: "launch-school-todos-session-id",
+  name: "session-id",
   resave: false,
   saveUninitialized: true,
   secret: "this is not very secure",
@@ -274,7 +274,7 @@ app.post("/lists/:todoListId/edit",
       req.flash("error", "The list title must be unique.");
       rerenderEditList();
     } else if (!res.locals.store.setTodoListTitle(+todoListId,
-                                                  todoListTitle)) {
+      todoListTitle)) {
       next(new Error("Not found."));
     } else {
       req.flash("success", "Todo list updated.");
